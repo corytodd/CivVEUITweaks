@@ -781,7 +781,7 @@ local function SortMajorStack( control1, control2 )
 end
 
 local function SortMinorStack( control1, control2 )
-	return SortStack( g_minorControlTable[ control1:GetVoid1() ], g_minorControlTable[ control2:GetVoid1() ] )
+	return SortStackEx( g_minorControlTable[ control1:GetVoid1() ], g_minorControlTable[ control2:GetVoid1() ] )
 end
 
 -------------------------------------------------
@@ -1428,6 +1428,7 @@ local function UpdateCivListNow()
 				instance.Pledge1:SetHide( not pledge or free )
 				instance.Pledge2:SetHide( not free )
 			end
+			instance[4] = minorPlayer:CanMajorBullyGold( g_activePlayerID ) and 999 or 0 -- If minor can be bullied, sort them at the top of the UI
 			instance[3] = minorPlayer:GetMinorCivFriendshipWithMajor( g_activePlayerID )
 			local minorCapital = minorPlayer:GetCapitalCity()
 			instance[2] = -(capital and minorCapital and Map_PlotDistance( capital:GetX(), capital:GetY(), minorCapital:GetX(), minorCapital:GetY() ) or math_huge)
