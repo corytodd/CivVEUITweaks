@@ -2315,7 +2315,7 @@ function()
 		local unit = UI.GetLastSelectedUnit()
 		if unit and unit:MovesLeft() > 0 then
 			UI.SelectUnit( unit )
-			UI.LookAtSelectionPlot()
+			-- UI.LookAtSelectionPlot() -- hack: do not jerk the camera away
 		end
 	end
 	g_isViewingMode = true
