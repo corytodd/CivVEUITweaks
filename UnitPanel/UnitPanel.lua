@@ -1341,7 +1341,7 @@ local function UpdateUnitHealthBar(unit)
 			Controls.GreenBar:SetHide(true)
 			Controls.YellowBar:SetHide(true)
 			Controls.RedBar:SetHide(false)
-		elseif healthTimes100 <= 66 then
+		elseif healthTimes100 < 90 then
 			Controls.YellowBar:SetSize(barSize)
 			Controls.GreenBar:SetHide(true)
 			Controls.YellowBar:SetHide(false)

@@ -477,7 +477,7 @@ local function UpdateFlagHealth( flag, damage )
 	-- DebugFlag( flag, "UpdateFlagHealth, damage=", damage ) end
 	if damage > 0 then
 		local healthPercent = 1 - damage / flag.m_MaxHitPoints
-		if healthPercent > 0.66 then
+		if healthPercent > 0.90 then
 			flag.HealthBar:SetFGColor( g_colorGreen )
 		elseif healthPercent > 0.33 then
 			flag.HealthBar:SetFGColor( g_colorYellow )
