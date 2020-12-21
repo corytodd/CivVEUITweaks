@@ -1357,13 +1357,8 @@ local function UpdateCivListNow()
 				end
 			end
 			instance.TheirTradeItems:SetText( table_concat( theirTradeItems ) )
-            if #ourTradeItems < 4 then
-                instance.OurTradeItems:SetText( table_concat( ourTradeItems ) )
-            else
-                ourTradeItems[4] = "..." --"[ICON_PLUS]"
-                instance.OurTradeItems:SetText( table_concat( ourTradeItems, nil, 1, 4 ) )
-            end
-
+			instance.OurTradeItems:SetText( table_concat( ourTradeItems ) )
+			
 			-- disable the button if we have a pending deal with this player
 			instance.Button:SetDisabled( playerID == UI.HasMadeProposal( g_activePlayerID ) )
 
